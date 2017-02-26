@@ -4,6 +4,7 @@ int getvklad ()
 {
  int p = 1, x;
  while (p)
+  {
     if (x < 10)
      { 
        p = 1;
@@ -15,5 +16,21 @@ int getvklad ()
        cout << "Введите сумму вклада: ";
        cin >> x;
      }
-    return x;
+    cout << endl;
+   }
+ return x;
+}
+int getsrok ()
+{
+ int p = 1, x;
+ while (p)
+  {
+    if (x > 365)
+     {
+      p = 1;
+      cout << "Срок вклада должен быть не более 365 дней";
+      }
+    cout << endl;
+   }
+ return x;
 }

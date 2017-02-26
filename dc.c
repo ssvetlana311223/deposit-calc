@@ -34,3 +34,22 @@ int getsrok ()
    }
  return x;
 }
+int main ()
+{
+ double dohod = 0, ;
+ int vklad, srok;
+ vklad = getvklad();
+ srok = getsrok();
+ if (vklad > 100)
+   {
+    a = 1.03;
+    b = 1.08;
+    c = 1.15;
+   }
+  else
+   {
+    a = 1.02;
+    b = 1.06;
+    c = 1.12;
+   }
+}

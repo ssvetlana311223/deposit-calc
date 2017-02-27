@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stdio.h>
-
 using namespace std;
 
 int getvklad ()
@@ -16,10 +15,10 @@ int getvklad ()
      else 
       { 
         p = 0;
-        cout << "Введите сумму вклада: ";
-        cin >> x;
+       cout << "Введите сумму вклада: ";
+       cin >> x;
       }
-    cout << endl;
+   cout << endl;
    }
  return x;
 }
@@ -40,7 +39,7 @@ int getsrok ()
        cout << "Введите срок вклада: ";
        cin >> x;
       }
-    cout << endl;
+   cout << endl;
    }
  return x;
 }

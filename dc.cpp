@@ -7,18 +7,15 @@ int getvklad ()
  int p = 1, x;
  while (p)
   {
+    p = 0;
+    cout << "Введите сумму вклада: ";
+    cin >> x;
     if (x < 10)
       { 
         p = 1;
         cout << "Минимальная сумма вклада должна быть 10 т.р.";
       }
-     else 
-      { 
-        p = 0;
-       cout << "Введите сумму вклада: ";
-       cin >> x;
-      }
-   cout << endl;
+    cout << endl;
    }
  return x;
 }
@@ -28,18 +25,15 @@ int getsrok ()
  int p = 1, x;
  while (p)
   {
+    p = 0;
+    cout << "Введите срок вклада: ";
+    cin >> x;
     if (x > 365)
       {
        p = 1;
        cout << "Срок вклада должен быть не более 365 дней";
        }
-     else 
-      {
-       p = 0;
-       cout << "Введите срок вклада: ";
-       cin >> x;
-      }
-   cout << endl;
+    cout << endl;
    }
  return x;
 }

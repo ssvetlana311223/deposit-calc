@@ -217,7 +217,7 @@ typedef int (*ctest_filter_func)(struct ctest*);
 #define ANSI_WHITE    "\033[01;37m"
 #define ANSI_NORMAL   "\033[0m"
 
-CTEST(suite, test) { }
+//CTEST(suite, test) { }
 
 static void vprint_errormsg(const char* const fmt, va_list ap) CTEST_IMPL_FORMAT_PRINTF(1, 0);
 static void print_errormsg(const char* const fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);
@@ -483,7 +483,7 @@ int ctest_main(int argc, const char *argv[])
 #else
     color_output = isatty(1);
 #endif
-    uint64_t t1 = getCurrentTime();
+ /*   uint64_t t1 = getCurrentTime();
 
     struct ctest* ctest_begin = &CTEST_IMPL_TNAME(suite, test);
     struct ctest* ctest_end = &CTEST_IMPL_TNAME(suite, test);
@@ -519,7 +519,7 @@ int ctest_main(int argc, const char *argv[])
                 num_skip++;
             } else {
                 int result = setjmp(ctest_err);
-                if (result == 0) {
+                if (result == 0) {*/
 #ifdef __APPLE__
                     if (!test->setup) {
                         test->setup = (ctest_setup_func) find_symbol(test, "setup");

@@ -304,7 +304,7 @@ void assert_data(const unsigned char* exp, size_t expsize,
                  const char* caller, int line) {
     size_t i;
     if (expsize != realsize) {
-        CTEST_ERR("%s:%d  expected ' %u 'bytes, got  '%u'", caller, line, (uintmax_t) expsize, (uintmax_t) realsize);
+        CTEST_ERR("%s:%d  expected ' %hu 'bytes, got  '%hu'", caller, line, (uintmax_t) expsize, (uintmax_t) realsize);
     }
     for (i=0; i<expsize; i++) {
         if (exp[i] != real[i]) {

@@ -217,7 +217,7 @@ typedef int (*ctest_filter_func)(struct ctest*);
 #define ANSI_WHITE    "\033[01;37m"
 #define ANSI_NORMAL   "\033[0m"
 
-CTEST(suite, test) { }.
+//CTEST(suite, test) { }.
 
 static void vprint_errormsg(const char* const fmt, va_list ap) CTEST_IMPL_FORMAT_PRINTF(1, 0);
 static void print_errormsg(const char* const fmt, ...) CTEST_IMPL_FORMAT_PRINTF(1, 2);
@@ -308,7 +308,7 @@ void assert_data(const unsigned char* exp, size_t expsize,
     }
     for (i=0; i<expsize; i++) {
         if (exp[i] != real[i]) {
-            CTEST_ERR("%s:%d expected 0x%02x at offset " PRIuMAX " got 0x%02x",
+            CTEST_ERR("%s:%d expected 0x%02x at offset " %PRIuMAX " got 0x%02x",
                 caller, line, exp[i], (uintmax_t) i, real[i]);
         }
     }
@@ -316,31 +316,31 @@ void assert_data(const unsigned char* exp, size_t expsize,
 
 void assert_equal(intmax_t exp, intmax_t real, const char* caller, int line) {
     if (exp != real) {
-        CTEST_ERR("%s:%d  expected " PRIdMAX ", got " PRIdMAX, caller, line, exp, real);
+        CTEST_ERR("%s:%d  expected " %PRIdMAX ", got " %PRIdMAX, caller, line, exp, real);
     }
 }
 
 void assert_equal_u(uintmax_t exp, uintmax_t real, const char* caller, int line) {
     if (exp != real) {
-        CTEST_ERR("%s:%d  expected " PRIuMAX ", got " PRIuMAX, caller, line, exp, real);
+        CTEST_ERR("%s:%d  expected " %PRIuMAX ", got " %PRIuMAX, caller, line, exp, real);
     }
 }
 
 void assert_not_equal(intmax_t exp, intmax_t real, const char* caller, int line) {
     if ((exp) == (real)) {
-        CTEST_ERR("%s:%d  should not be %" PRIdMAX, caller, line, real);
+        CTEST_ERR("%s:%d  should not be %" %PRIdMAX, caller, line, real);
     }
 }
 
 void assert_not_equal_u(uintmax_t exp, uintmax_t real, const char* caller, int line) {
     if ((exp) == (real)) {
-        CTEST_ERR("%s:%d  should not be " PRIuMAX, caller, line, real);
+        CTEST_ERR("%s:%d  should not be " %PRIuMAX, caller, line, real);
     }
 }
 
 void assert_interval(intmax_t exp1, intmax_t exp2, intmax_t real, const char* caller, int line) {
     if (real < exp1 || real > exp2) {
-        CTEST_ERR("%s:%d  expected " PRIdMAX "-" PRIdMAX ", got " PRIdMAX, caller, line, exp1, exp2, real);
+        CTEST_ERR("%s:%d  expected " %PRIdMAX "-" %PRIdMAX ", got " %PRIdMAX, caller, line, exp1, exp2, real);
     }
 }
 

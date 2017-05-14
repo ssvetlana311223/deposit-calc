@@ -304,11 +304,11 @@ void assert_data(const unsigned char* exp, size_t expsize,
                  const char* caller, int line) {
     size_t i;
     if (expsize != realsize) {
-        CTEST_ERR("%s:%d  expected  %u bytes, got " %u, caller, line, (uintmax_t) expsize, (uintmax_t) realsize);
+        CTEST_ERR("%s:%d  expected  %u bytes, got  %u", caller, line, (uintmax_t) expsize, (uintmax_t) realsize);
     }
     for (i=0; i<expsize; i++) {
         if (exp[i] != real[i]) {
-            CTEST_ERR("%s:%d expected 0x%02x at offset " %u, " got 0x%02x",
+            CTEST_ERR("%s:%d expected 0x%02x at offset  %u got 0x%02x",
                 caller, line, exp[i], (uintmax_t) i, real[i]);
         }
     }
@@ -316,13 +316,13 @@ void assert_data(const unsigned char* exp, size_t expsize,
 
 void assert_equal(intmax_t exp, intmax_t real, const char* caller, int line) {
     if (exp != real) {
-        CTEST_ERR("%s:%d  expected " %d ", got " %d, caller, line, exp, real);
+        CTEST_ERR("%s:%d  expected  %d , got  %d", caller, line, exp, real);
     }
 }
 
 void assert_equal_u(uintmax_t exp, uintmax_t real, const char* caller, int line) {
     if (exp != real) {
-        CTEST_ERR("%s:%d  expected " %u, ", got " %u, caller, line, exp, real);
+        CTEST_ERR("%s:%d  expected  %u, got  %u", caller, line, exp, real);
     }
 }
 

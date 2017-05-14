@@ -184,7 +184,7 @@ void assert_dbl_far(double exp, double real, double tol, const char* caller, int
 #include <unistd.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include <ctest.h>
+
 #ifdef __APPLE__
 #include <dlfcn.h>
 #endif

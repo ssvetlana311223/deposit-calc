@@ -1,4 +1,5 @@
 #include "deposit.h"
+#include <stdio.h>
 
 int zero(int &d, int ye){
 	double s=ye;
@@ -17,7 +18,7 @@ int one(int &d, int ye){
 
 int two(int &d, int ye){
 	int s=ye;
-	cout << d<< endl;
+        printf("%d/n");
 	double p;
 	if (d==1)p = 0.06;
 	if (d==2)p = 0.08;
